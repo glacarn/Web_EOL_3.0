@@ -7,7 +7,7 @@
         </v-row>
 
         <v-row class="insertColorSecondary">
-            <v-col cols="12">
+            <v-col cols="12" class="pa-6">
                 <p>L'équipe pédagogique de l'Ecole d'Optique & Lunetterie de Lille est constituée de 19 intervenants qualifiés, reconnus et expérimentés.</p>
                 <br>
                 <p>Ils connaissent parfaitement les techniques de réussite des examens et proposent aux étudiants un enseignement pragmatique, précis et exigeant</p>
@@ -44,10 +44,12 @@ import Arnaud_GLACET from '../assets/images/equipe_pedagogique/Arnaud_GLACET.jpg
 import Elodie_GOSSARD from '../assets/images/equipe_pedagogique/Elodie_GOSSARD.jpg'
 import Charlotte_GRANIER from '../assets/images/equipe_pedagogique/Charlotte_GRANIER.jpg'
 import Francois_NEVEJANS from '../assets/images/equipe_pedagogique/Francois_NEVEJANS.jpg'
-import Marc_ROUTIER from '../assets/images/equipe_pedagogique/Marc_ROUTIER.jpg'
 import Pierre_TRICOT from '../assets/images/equipe_pedagogique/Pierre_TRICOT.jpg'
 import Philippe_VANDENBROUCKE from '../assets/images/equipe_pedagogique/Philippe_VANDENBROUCKE.jpg'
 
+import Julien_ETOGO from '../assets/images/equipe_pedagogique/Julien_ETOGO.png'
+import Faustine_WATTELLE from '../assets/images/equipe_pedagogique/Faustine_WATTELLE.png'
+import Helene_CHUFFART from '../assets/images/equipe_pedagogique/Helene_CHUFFFART.png'
 
 export default {
     name: 'EquipePedagogique',
@@ -75,6 +77,11 @@ export default {
                     dateEntree: "2002-09-01",
                 },
                 {
+                    photo: Helene_CHUFFART,
+                    nom: "Hélène CHUFFART",
+                    dateEntree: "2023-09-01",
+                },
+                {
                     photo: Anne_DAMBREVILLE,
                     nom: "Anne DAMBREVILLE",
                     dateEntree: "2020-09-01",
@@ -95,7 +102,7 @@ export default {
                     dateEntree: "2000-09-01",
                 },
                 {
-                    photo: ".jpg",
+                    photo: Julien_ETOGO,
                     nom: "Julien ETOGO",
                     dateEntree: "2023-09-01",
                 },
@@ -120,11 +127,6 @@ export default {
                     dateEntree: "2013-09-01",
                 },
                 {
-                    photo: Marc_ROUTIER,
-                    nom: "Marc ROUTIER",
-                    dateEntree: "2019-09-01", // 2021 + 2 ans
-                },
-                {
                     photo: Pierre_TRICOT,
                     nom: "Pierre TRICOT",
                     dateEntree: "2019-09-01",
@@ -135,7 +137,7 @@ export default {
                     dateEntree: "2004-09-01",
                 },
                 {
-                    photo: ".jpg",
+                    photo: Faustine_WATTELLE,
                     nom: "Faustine WATTELLE",
                     dateEntree: "2022-09-01",
                 },

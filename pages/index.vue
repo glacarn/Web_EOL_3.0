@@ -18,7 +18,7 @@
             <template v-slot:activator="{ props }">
                 <v-row align="center" justify="center" class="visiteVirtuelle" v-bind="props">
                     <v-col md="1" sm="4" cols="12" >
-                        <img src="../assets/images/icons/360Logo.png" alt="360°" style="display: block; margin: auto;">
+                        <img src="../assets/images/icons/360Logo.png" alt="360°" id="logo360">
                     </v-col>
                     <v-col md="6" offset-md="2" cols="12">
                         <h2 class="text-center textVisiteVirtuelle">Visite virtuelle de l'EOL</h2>
@@ -57,8 +57,8 @@
                     </v-col>
 
                     <v-col cols="12" sm="6">
-                            <h2 class="chiffresEOL text-center mt-5">82%</h2>
-                            <h3 class="text-center">De réussite en 2022 en licence professionnelle</h3>
+                            <h2 class="chiffresEOL text-center mt-5">91%</h2>
+                            <h3 class="text-center">De réussite en 2023 en licence professionnelle</h3>
 
                             <h2 class="chiffresEOL text-center mt-5">87</h2>
                             <h3 class="text-center">Années d'expérience</h3>
@@ -197,6 +197,12 @@ export default {
     margin-top: 20px;
     cursor: pointer;
 }
+#logo360{
+    display: block;
+    margin: auto;
+    height: auto;
+    width: 150px;
+}
 .visiteVirtuelle img{
     height: 75px;
 }
@@ -289,8 +295,15 @@ export default {
     }
 }
 @media (max-width: 600px) {
+    #dialogVisiteVirtuelle {
+        width: 100vw;
+        height: 100vh;
+    }
+    #logo360{
+        width: 100px;
+    }
     .textVisiteVirtuelle{
-        font-size: 1em;
+        font-size: 0.9em;
     }
     .h2TitreParties{
         font-size: 1.5em;

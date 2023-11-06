@@ -112,6 +112,18 @@ video{
     height: 600px;
 }
 
+.titrePage p{
+    font-size: 0.6em;
+    font-family: $font-family-std;
+}
+
+.titrePage img {
+    height: 60px;
+    width: auto;
+    display: flex;
+    margin: 20px auto 5px auto;
+}
+
 @media (max-width: 960px) {
   h1{
     font-size: 2.5em;
@@ -128,6 +140,9 @@ video{
   video{
     height: 350px;
   }
+  .titrePage img {
+        margin-top: 10px
+    }
 }
 @media (max-width: 600px) {
   h1{

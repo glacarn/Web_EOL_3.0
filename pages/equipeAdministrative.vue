@@ -93,8 +93,8 @@ export default {
                     photo: Marie_RODRIGUEZ,
                     nom: "Marie RODRIGUEZ",
                     poste: "Assistante administrative",
-                    description1: "J’ai intégré l’EOL en octobre 2022 en alternance en tant qu’assistante administrative et commerciale. Je poursuis actuellement un bachelor 'entrepreneuriat et management de projet : option RH' à l’école Lybre.",
-                    description2: "Grâce à la pluridisciplinarité des matières étudiées, je peux appliquer mes connaissances dans diverses fonctions au sein de mon entreprise. A l’écoute et ayant le sens du service, c'est avec grand intérêt que je suis l’évolution pédagogique des élèves et souhaite me rendre utile au sein de cette école, entourée d’une équipe chaleureuse."
+                    description1: "Etudiante en master 1 marketing et communication chez Efficom et alternante à l'EOL depuis 2022, c'est avec plaisir que je poursuis mon parcours pour deux années supplémentaires.",
+                    description2: "En tant que chargée marketing, je suis déterminée à partager la vision de l'EOL. Je travaille en étroite collaboration avec une équipe chaleureuse, pour mettre en lumière nos programmes et nos réalisations."
                 }
             ]
         }

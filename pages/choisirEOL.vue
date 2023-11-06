@@ -40,6 +40,16 @@
             </v-col>
         </v-row>
 
+        <v-row justify="center" id="qualiopi">
+            <v-col cols="12" sm="6" md="4">
+                <a href="/ressources/certificat_qualiopi.pdf" target="_blank">
+                    <img src="../assets/images/choisir_EOL/qualiopi.png" alt="Ecole certifié Qualiopi">
+                    <p>La certification qualité a été délivrée au titre des catégories d'actions suivantes :</p>
+                    <p>ACTIONS DE FORMATION</p>
+                    <p>ACTIONS DE FORMATION PAR APPRENTISSAGE</p>
+                </a>
+            </v-col>
+        </v-row>
     </div>
 </template>
 
@@ -120,5 +130,21 @@ h3{
 }
 .img-rounded{
     border-radius: 100%;
+}
+
+#qualiopi img{
+    height: 140px;
+    width: auto;
+    display: flex;
+    margin: auto;
+}
+#qualiopi p{
+    font-size: 0.8em;
+}
+@media (max-width: 600px) {
+    #qualiopi img{
+        height: auto;
+        width: 100%;
+    }
 }
 </style>

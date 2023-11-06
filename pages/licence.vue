@@ -1,21 +1,33 @@
 <template>
     <div>
-        <v-row no-gutters class="mt-5">
-            <v-col cols="9" class="pt-4 pl-3">
+        <v-row no-gutters class="mt-5 titrePage">
+            <v-col cols="12" sm="8" order="1" md="6" order-md="1" class="pl-3">
                 <h1>Licence professionnelle</h1>
             </v-col>
-            <v-col cols="3">
+            <v-col cols="6" sm="2" offset-sm="8" order="3" md="1" offset-md="1" order-md="2">
+                <a href="/ressources/document_licence.pdf" target="_blank">
+                    <img src="../assets/images/icons/icon_fiche_recap.png">
+                    <p class="text-center">Document Licence</p>
+                </a>
+            </v-col>
+            <v-col cols="6" sm="2" order="4" md="1" order-md="3">
+                <a href="/ressources/rncp_licence.pdf" target="_blank">
+                    <img src="../assets/images/icons/icon_rncp.png">
+                    <p class="text-center">Fiche RNCP</p>
+                </a>
+            </v-col>
+            <v-col cols="8" order="2" offset="4" sm="4" offset-sm="0" md="3" order-md="4">
                 <PourcentageReussite :reussite="reussite"></PourcentageReussite>
             </v-col>
         </v-row>
 
-        <v-row>
-            <v-col cols="5">
+        <v-row no-gutters align="center" class="mt-10">
+            <v-col cols="12" md="5">
                 <div id="encartIntro">
                     <h3>
                         L’EOL et l’Université de Nîmes s’associent pour permettre aux jeunes diplômés en BTS Opticien Lunetier de se spécialiser dans l’acquisition :
                     </h3>
-                    <ul class="mt-5" style="font-size: 1.2em;">
+                    <ul class="mt-5 pl-5" style="font-size: 1.2em;">
                         <li class="mt-3">De compétences complémentaires dans le domaine de la réfraction et de la contactologie.</li>
                         <li class="mt-3">De connaissances en anatomie et en physiopathologie oculaire.</li>
                         <li class="mt-3">De connaissances en déficiences visuelles en handicapologie.</li>
@@ -32,14 +44,12 @@
                     </h3>
                 </div>
             </v-col>
-            <v-col cols="7">
-                <img src="../assets/images/licence/biomicroscopie.png" alt="examen à la lampe à fente (biomicroscopie)">
+            <v-col cols="12" md="7">
+                <img src="../assets/images/licence/biomicroscopie.png" alt="examen à la lampe à fente (biomicroscopie)" class="imgVerticale">
             </v-col>
         </v-row>
 
         <ConditionEntree :conditions="conditions"></ConditionEntree>
-
-        <RepartitionFormation :repartition="repartition"></RepartitionFormation>
 
         <v-row class="mt-8">
             <v-col cols="12" id="encartProgramme">
@@ -99,10 +109,11 @@
 
         <v-row no-gutters="" class="mt-5">
             <v-col cols="12">
-                <img src="../assets/images/licence/optometrie.jpg" alt="Examen de la vue optométrique">
+                <img src="../assets/images/licence/optometrie.jpg" alt="Examen de la vue optométrique" class="imgHorizontale">
             </v-col>
         </v-row>
 
+        <RepartitionFormation :repartition="repartition"></RepartitionFormation>
     </div>
 </template>
 
@@ -122,8 +133,8 @@ export default {
     data() {
         return {
             reussite: {
-                taux: "82",
-                annee: "2022",
+                taux: "91",
+                annee: "2023",
                 formation: "En licence professionnelle"
             },
             conditions: {
@@ -132,7 +143,8 @@ export default {
             },
             repartition :{
                 l1: "La durée de la formation est de 521 heures sur l'année.",
-                l2: "L'étudiant est 2 jours en formation et 3 jours en entreprise."
+                l2: "La durée en entreprise est d'environ 900 heures sur l'année.",
+                l3: "Les cours ont lieu les lundis et mardis."
             }
         }
     },
@@ -150,16 +162,56 @@ export default {
     background-color: $color-secondary;
     padding: 30px;
 }
-img{
-    max-width: 100%;
-    max-height: 800px;
-    display: flex;
-    margin: auto;
-}
+
 #encartProgramme{
     border: solid 2px;
 }
 h2{
     color: $color-primary;
+}
+
+.imgVerticale{
+    display: flex;
+    width: auto;
+    margin-right: 0px;
+    margin-left: auto;
+    max-height: 933px;
+}
+
+.imgHorizontale{
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+
+
+@media (max-width: 1280px) {
+    #encartIntro, #encartDescription{
+       font-size: 0.8em;
+    }
+
+    .imgVerticale{
+        max-height: 800px;
+    }
+    #encartProgramme{
+        font-size: 1em;
+    }
+    h5{
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 960px) {
+    .imgVerticale{
+        margin-right: auto;
+        margin-top: 20px;
+        width: auto;
+        max-height: 400px;
+    }
+}
+@media (max-width: 600px) {
+    .imgVerticale{
+        width: 100%;
+        max-height: 400px;
+    }
 }
 </style>

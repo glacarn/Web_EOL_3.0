@@ -13,11 +13,14 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      htmlAttrs: {
+        lang: 'fr'
+      },
     }
   },
 
   vite: {
-    assetsInclude: "**/*.JPG",
+    assetsInclude: ['**/*.JPEG','**/*.JPG', '**/*.PNG', '**/*.pdf'],
     css:{
       preprocessorOptions: {
         scss: {
@@ -35,7 +38,17 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  
+
+/* 
+  runtimeConfig: {
+    public: {
+      TAUX_REUSSITE_BTS_INITIAL: process.env.TAUX_REUSSITE_BTS_INITIAL || 'FAIL',
+    }
+  }
+*/
+
+
+
 /*  hooks: {
     'vite:extendConfig': config => {
       config.plugins.push(
