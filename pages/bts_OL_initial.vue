@@ -69,6 +69,8 @@
         </v-row>
 
         <RepartitionFormation :repartition="repartition"></RepartitionFormation>
+
+        <TauxPoursuiteInsertion :stats="stats"></TauxPoursuiteInsertion>
     </div>
 </template>
 
@@ -77,19 +79,21 @@
 import PourcentageReussite from '../components/pourcentageReussite.vue';
 import ConditionEntree from '../components/conditionEntree.vue';
 import RepartitionFormation from '../components/repartitionFormation.vue';
+import TauxPoursuiteInsertion from '../components/tauxPoursuiteInsertion.vue';
 
 export default {
     name: 'BTSOLinitial',
     components: {
         PourcentageReussite,
         ConditionEntree,
-        RepartitionFormation
+        RepartitionFormation,
+        TauxPoursuiteInsertion
     },
     data() {
         return {
             reussite:{
-                taux: "72,7",
-                annee: "2023",
+                taux: "",
+                annee: "",
                 formation: "En formation initiale"
             },
             conditions: {
@@ -100,8 +104,21 @@ export default {
                 l1: "La durée de la formation est de 1 850 heures sur les 2 années.",
                 l2: "Stage de 6 semaines en fin de 1re année.",
                 l3: "Les cours ont lieu du lundi au vendredi."
+            },
+            stats: {
+                tauxPoursuiteEtudes: "",
+                tauxInsertionProfessionnelle: "",
+                anneePoursuiteInsertion: ""
             }
         }
+    },
+    mounted() {
+        const config = useRuntimeConfig();
+        this.reussite.taux = config.public.TAUX_REUSSITE_BTS_INITIAL;
+        this.reussite.annee = config.public.ANNEE_REUSSITE_BTS_INITIAL;
+        this.stats.tauxPoursuiteEtudes = config.public.TAUX_POURSUITE_ETUDE_BTS_INITIAL;
+        this.stats.tauxInsertionProfessionnelle = config.public.TAUX_INSERTION_PROFESSIONNELLE_BTS_INITIAL;
+        this.stats.anneePoursuiteInsertion = config.public.ANNEE_POURS_INSERT_BTS_INITIAL;
     },
 }  
 </script>

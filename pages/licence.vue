@@ -107,13 +107,14 @@
             </v-col>
         </v-row>
 
-        <v-row no-gutters="" class="mt-5">
+        <v-row no-gutters class="mt-5">
             <v-col cols="12">
                 <img src="../assets/images/licence/optometrie.jpg" alt="Examen de la vue optométrique" class="imgHorizontale">
             </v-col>
         </v-row>
 
         <RepartitionFormation :repartition="repartition"></RepartitionFormation>
+        <TauxPoursuiteInsertion :stats="stats"></TauxPoursuiteInsertion>
     </div>
 </template>
 
@@ -122,19 +123,21 @@
 import PourcentageReussite from '../components/pourcentageReussite.vue';
 import ConditionEntree from '../components/conditionEntree.vue'
 import RepartitionFormation from '../components/repartitionFormation.vue';
+import TauxPoursuiteInsertion from '../components/tauxPoursuiteInsertion.vue';
 
 export default {
     name: 'Licence',
     components: {
         PourcentageReussite,
         ConditionEntree,
-        RepartitionFormation
+        RepartitionFormation,
+        TauxPoursuiteInsertion
     },
     data() {
         return {
             reussite: {
-                taux: "91",
-                annee: "2023",
+                taux: "",
+                annee: "",
                 formation: "En licence professionnelle"
             },
             conditions: {
@@ -145,8 +148,21 @@ export default {
                 l1: "La durée de la formation est de 521 heures sur l'année.",
                 l2: "La durée en entreprise est d'environ 900 heures sur l'année.",
                 l3: "Les cours ont lieu les lundis et mardis."
+            },
+            stats: {
+                tauxPoursuiteEtudes: "",
+                tauxInsertionProfessionnelle: "",
+                anneePoursuiteInsertion: ""
             }
         }
+    },
+    mounted() {
+        const config = useRuntimeConfig();
+        this.reussite.taux = config.public.TAUX_REUSSITE_LICENCE;
+        this.reussite.annee = config.public.ANNEE_REUSSITE_LICENCE;
+        this.stats.tauxPoursuiteEtudes = config.public.TAUX_POURSUITE_ETUDE_LICENCE;
+        this.stats.tauxInsertionProfessionnelle = config.public.TAUX_INSERTION_PROFESSIONNELLE_LICENCE;
+        this.stats.anneePoursuiteInsertion = config.public.ANNEE_POURS_INSERT_LICENCE;
     },
 }  
 </script>

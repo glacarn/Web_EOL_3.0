@@ -76,6 +76,8 @@
         </v-row>
 
         <RepartitionFormation :repartition="repartition"></RepartitionFormation>
+
+        <TauxPoursuiteInsertion :stats="stats"></TauxPoursuiteInsertion>
     </div>
 </template>
 
@@ -83,18 +85,20 @@
 <script>
 import ConditionEntree from '../components/conditionEntree.vue'
 import RepartitionFormation from '../components/repartitionFormation.vue';
+import TauxPoursuiteInsertion from '../components/tauxPoursuiteInsertion.vue';
 
 export default {
     name: 'prepa',
     components: {
         ConditionEntree,
-        RepartitionFormation
+        RepartitionFormation,
+        TauxPoursuiteInsertion
     },
     data() {
         return {
             reussite:{
-                taux: "NC",
-                annee: "2024",
+                taux: "",
+                annee: "",
                 formation: "(1ère session en cours)"
             },
             conditions: {
@@ -105,8 +109,21 @@ export default {
                 l1: "La durée de la formation est de 480h sur l'année.",
                 l2: "La durée en entreprise est d'environ 900 heures sur l'année.",
                 l3: "Les cours ont lieu les jeudis et le vendredis."
+            },
+            stats: {
+                tauxPoursuiteEtudes: "",
+                tauxInsertionProfessionnelle: "",
+                anneePoursuiteInsertion: ""
             }
         }
+    },
+    mounted() {
+        const config = useRuntimeConfig();
+        this.reussite.taux = config.public.TAUX_REUSSITE_LICENCE;
+        this.reussite.annee = config.public.ANNEE_REUSSITE_LICENCE;
+        this.stats.tauxPoursuiteEtudes = config.public.TAUX_POURSUITE_ETUDE_LICENCE;
+        this.stats.tauxInsertionProfessionnelle = config.public.TAUX_INSERTION_PROFESSIONNELLE_LICENCE;
+        this.stats.anneePoursuiteInsertion = config.public.ANNEE_POURS_INSERT_LICENCE;
     },
 }  
 </script>

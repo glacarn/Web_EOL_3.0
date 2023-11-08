@@ -70,6 +70,7 @@
 
         <RepartitionFormation :repartition="repartition"></RepartitionFormation>
 
+        <TauxPoursuiteInsertion :stats="stats"></TauxPoursuiteInsertion>
     </div>
 </template>
 
@@ -78,19 +79,21 @@
 import PourcentageReussite from '../components/pourcentageReussite.vue';
 import ConditionEntree from '../components/conditionEntree.vue';
 import RepartitionFormation from '../components/repartitionFormation.vue';
+import TauxPoursuiteInsertion from '../components/tauxPoursuiteInsertion.vue';
 
 export default {
     name: 'BTSOLalternance',
     components: {
         PourcentageReussite,
         ConditionEntree,
-        RepartitionFormation
+        RepartitionFormation,
+        TauxPoursuiteInsertion
     },
     data() {
         return {
             reussite:{
-                taux: "64,4",
-                annee: "2022",
+                taux: "",
+                annee: "",
                 formation: "En formation alternance"
             },
             conditions: {
@@ -101,8 +104,21 @@ export default {
                 l1: "La durée de la formation est de 1352 heures sur les 2 années.",
                 l2: "La durée en entreprise est d'environ 2200 heures sur les 2 années.",
                 l3: "Les cours ont lieu les lundis et mardis en 1ère annéee, les jeudis et vendredis en 2ème année.",
+            },
+            stats: {
+                tauxPoursuiteEtudes: "",
+                tauxInsertionProfessionnelle: "",
+                anneePoursuiteInsertion: ""
             }
         }
+    },
+    mounted() {
+        const config = useRuntimeConfig();
+        this.reussite.taux = config.public.TAUX_REUSSITE_BTS_ALTERNANT;
+        this.reussite.annee = config.public.ANNEE_REUSSITE_BTS_ALTERNANT;
+        this.stats.tauxPoursuiteEtudes = config.public.TAUX_POURSUITE_ETUDE_BTS_ALTERNANT;
+        this.stats.tauxInsertionProfessionnelle = config.public.TAUX_INSERTION_PROFESSIONNELLE_BTS_ALTERNANT;
+        this.stats.anneePoursuiteInsertion = config.public.ANNEE_POURS_INSERT_BTS_ALTERNANT;
     },
 }  
 </script>
