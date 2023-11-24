@@ -11,8 +11,7 @@
                     <h3>Directeur de l'EOL</h3>
                     
                     <h2 class="mt-10">D'HULST Perrine</h2>
-                    <h3>Assistante de direction</h3>
-                    <h3>Responsable des admissions</h3>
+                    <h3>Directrice commerciale et administrative</h3>
                 </div>
             </v-col>
         </v-row>
@@ -68,9 +67,9 @@ export default {
                     positionnement: 2,
                     photo: Perrine_DHULST,
                     nom: "Perrine D'HULST",
-                    poste: "Assistante de direction et référente mobilité",
-                    description1: "Diplomée du BTS Opticien Lunetier en 2018 de l'EOL, je me suis dirigée vers un Bachelor Manager Opticien pour gagner en compétences et pouvoir entreprendre dans le domaine commercial.",
-                    description2: "Suite au rachat de l'EOL par Arnaud Van Robaeys, j'ai accepté avec grand plaisir le poste d'Assistante de Direction qui m'a été proposé. J'ai à coeur de transmettre aux élèves, les valeurs que l'EOL m'a inculqué lorsque j'étais étudiante."
+                    poste: "Directrice commerciale et administrative, référente mobilité",
+                    description1: "Diplômée du BTS Opticien Lunetier en 2018 à l’EOL, puis d’un Master en gestion des entreprises.",
+                    description2: "Je m'occupe de développer la commercialisation de l'école et d'améliorer le suivi des étudiants."
                 },
                 {
                     positionnement: 1,
@@ -92,7 +91,7 @@ export default {
                     positionnement: 1,
                     photo: Marie_RODRIGUEZ,
                     nom: "Marie RODRIGUEZ",
-                    poste: "Assistante administrative",
+                    poste: "Chargée Marketing",
                     description1: "Etudiante en master 1 marketing et communication chez Efficom et alternante à l'EOL depuis 2022, c'est avec plaisir que je poursuis mon parcours pour deux années supplémentaires.",
                     description2: "En tant que chargée marketing, je suis déterminée à partager la vision de l'EOL. Je travaille en étroite collaboration avec une équipe chaleureuse, pour mettre en lumière nos programmes et nos réalisations."
                 }

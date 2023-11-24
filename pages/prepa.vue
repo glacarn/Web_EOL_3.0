@@ -119,11 +119,11 @@ export default {
     },
     mounted() {
         const config = useRuntimeConfig();
-        this.reussite.taux = config.public.TAUX_REUSSITE_LICENCE;
-        this.reussite.annee = config.public.ANNEE_REUSSITE_LICENCE;
-        this.stats.tauxPoursuiteEtudes = config.public.TAUX_POURSUITE_ETUDE_LICENCE;
-        this.stats.tauxInsertionProfessionnelle = config.public.TAUX_INSERTION_PROFESSIONNELLE_LICENCE;
-        this.stats.anneePoursuiteInsertion = config.public.ANNEE_POURS_INSERT_LICENCE;
+        this.reussite.taux = config.public.TAUX_REUSSITE_PREPA;
+        this.reussite.annee = config.public.ANNEE_REUSSITE_PREPA;
+        this.stats.tauxPoursuiteEtudes = config.public.TAUX_POURSUITE_ETUDE_PREPA;
+        this.stats.tauxInsertionProfessionnelle = config.public.TAUX_INSERTION_PROFESSIONNELLE_PREPA;
+        this.stats.anneePoursuiteInsertion = config.public.ANNEE_POURS_INSERT_PREPA;
     },
 }  
 </script>

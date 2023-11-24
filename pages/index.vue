@@ -43,12 +43,12 @@
                 <v-row>
                     <v-col cols="12" sm="6">
                         <h2 class="chiffresEOL text-center mt-5">100%</h2>
-                        <h3 class="text-center">De réussite au BTS 2022 en formation initiale</h3>
-                        <p class="text-center">Pour la 2e année consécutive !</p>
+                        <h3 class="text-center">De réussite au BTS en formation initiale, deux années consécutives</h3>
+                        <p class="text-center">En 2021 et 2022</p>
                     
                     
-                        <h2 class="chiffresEOL text-center mt-5">60%</h2>
-                        <h3 class="text-center">De réussite au BTS 2022 en formation alternance</h3>
+                        <h2 class="chiffresEOL text-center mt-5">{{ BTSalternant.taux }}%</h2>
+                        <h3 class="text-center">De réussite au BTS {{ BTSalternant.annee }} en formation alternance</h3>
                     
                     
                         <h2 class="chiffresEOL text-center mt-5">100%</h2>
@@ -57,14 +57,14 @@
                     </v-col>
 
                     <v-col cols="12" sm="6">
-                            <h2 class="chiffresEOL text-center mt-5">91%</h2>
-                            <h3 class="text-center">De réussite en 2023 en licence professionnelle</h3>
+                            <h2 class="chiffresEOL text-center mt-5">{{ licence.taux }}%</h2>
+                            <h3 class="text-center">De réussite en {{ BTSalternant.annee }} en licence professionnelle</h3>
 
-                            <h2 class="chiffresEOL text-center mt-5">87</h2>
+                            <h2 class="chiffresEOL text-center mt-5">{{ ancienneteEcole }}</h2>
                             <h3 class="text-center">Années d'expérience</h3>
-                            <p>87 ans que nous enseignons notre savoir et nos valeurs aux étudiants.</p>
-                            <p>87 ans que nous formons des professionnels compétents de l’Optique.</p>
-                            <p>87 ans que nous transmettons, tout simplement, notre passion.</p>
+                            <p>{{ ancienneteEcole }} ans que nous enseignons notre savoir et nos valeurs aux étudiants.</p>
+                            <p>{{ ancienneteEcole }} ans que nous formons des professionnels compétents de l’Optique.</p>
+                            <p>{{ ancienneteEcole }} ans que nous transmettons, tout simplement, notre passion.</p>
                     </v-col>
                 </v-row>
             </v-col>
@@ -144,6 +144,19 @@ export default {
             premiereVisite :true,
             dialogVisiteVirtuelle: false,
             interval: 7000,
+
+            BTSalternant:{
+                taux: "",
+                annee: "",
+            },
+
+            licence:{
+                taux: "",
+                annee: "",
+            },
+
+            ancienneteEcole : "",
+
             temoignages : [
                 {
                     texte : "« Être diplômé de l'Ecole d'Optique de Lille a été, est et restera une fierté. Je garde de merveilleux souvenirs et il m’arrive de passer la porte de l’école qui reste ouverte comme celle d’un(e) ami(e). Je suis heureux du nouvel élan donné récemment tant il me rappelle la qualité de mes années passées. J’applaudis la nouvelle approche pédagogique, la bienveillance et l'esprit d'équipe. Le socle est puissant et l’approche du métier reste toujours parallèle à la réalité. L’Ecole d’Optique de Lille, une référence et une valeur sûre pour la profession. »",
@@ -171,6 +184,18 @@ export default {
                 }
             ]
         }
+    },
+    mounted() {
+        // Récupération des taux et année de réussite
+        const config = useRuntimeConfig();
+        this.BTSalternant.taux = config.public.TAUX_REUSSITE_BTS_ALTERNANT;
+        this.BTSalternant.annee = config.public.ANNEE_REUSSITE_BTS_ALTERNANT;
+        this.licence.taux = config.public.TAUX_REUSSITE_LICENCE;
+        this.licence.annee = config.public.ANNEE_REUSSITE_LICENCE;
+
+        // Calcul de l'ancienneté de l'école
+        let anciennete = new Date(Date.now() - Date.parse("1936-01-01"));
+        this.ancienneteEcole = anciennete.getUTCFullYear() - 1970;
     },
 }  
 </script>

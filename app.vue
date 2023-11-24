@@ -12,7 +12,7 @@
                         <btn @click="dialogEvenements = false" style="cursor: pointer;"><v-icon icon="mdi-close-thick"></v-icon></btn>
                     </v-col>
                 </v-row>
-                <Evenements/>
+                <Evenements @noEvent="noEvent"/>
             </v-card>
         </v-dialog>
         
@@ -62,6 +62,11 @@ export default {
         return {
             dialogEvenements : true,
         }
+    },
+    methods: {
+      noEvent() {
+        this.dialogEvenements = false;
+      },
     },
 }  
 </script>

@@ -70,6 +70,7 @@ export default {
     name: 'ChoisirEOL',
     data() {
         return {
+            ancienneteEcole : "",
             images1: [
                 {
                     source: ecole_familiale,
@@ -85,7 +86,7 @@ export default {
                 },
                 {
                     source: lille,
-                    texte: "87 ans d'existance"
+                    texte: " ans d'existence"
                 },
                 {
                     source: nombreux_partenaires,
@@ -99,7 +100,7 @@ export default {
                 },
                 {
                     source: reconversion_professionnelle,
-                    texte: "Reconversion professionnelles possible à l'EOL"
+                    texte: "Reconversion professionnelle possible à l'EOL"
                 },
                 {
                     source: suivi_personnalise,
@@ -116,6 +117,12 @@ export default {
             ]
 
         }
+    },
+    mounted() {
+        // Calcul de l'ancienneté de l'école
+        let anciennete = new Date(Date.now() - Date.parse("1936-01-01"));
+        this.ancienneteEcole = anciennete.getUTCFullYear() - 1970;
+        this.images1[3].texte = this.ancienneteEcole + this.images1[3].texte;
     },
 }  
 </script>
