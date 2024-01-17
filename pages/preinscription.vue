@@ -1,5 +1,9 @@
 <template>
     <div>
+        <v-dialog persistent width="auto" v-model="progressChargement">
+            <v-progress-circular id="progressChargement" :size="80" :width="5" color="#7B519C" indeterminate></v-progress-circular>
+        </v-dialog>
+
         <v-row>
             <v-col cols="12">
                 <h1 class="text-center">Demande de dossier de pré-inscription</h1>
@@ -41,6 +45,7 @@ export default {
             commentaires: "",
             jpo: true,
             rgpdValid: false,
+            progressChargement : false,
 
             formationPossible: [
                 "Classe préparatoire",
@@ -85,6 +90,7 @@ export default {
     methods:{
         async envoyer () {
             if (this.rgpdValid) {
+                this.progressChargement = true;
                 axios.post('https://backend-eol.onrender.com/preinscription', { //http://localhost:3000/preinscription
                     nom: this.nom,
                     prenom: this.prenom,
@@ -105,6 +111,7 @@ export default {
                     this.commentaires = "";
                     this.jpo = false;
                     this.rgpdValid = false;
+                    this.progressChargement = false;
                     navigateTo('\confirmationDossier')
                 })
                 .catch(error => {
