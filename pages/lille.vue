@@ -12,7 +12,7 @@
                 <p>La métropole lilloise offre aux étudiants un cadre de vie privilégié grâce à l’ensemble de ses aménagements tels que ses parcs verts, ses nombreux restaurants, bars et boîtes de nuit, ainsi que ses centres commerciaux.</p>
                 <p>De plus, ici à Lille, la culture est à portée de main ! Musées, opéra, salles de spectacles et de concerts, cinémas, clubs sportifs, Grand Stade de Lille…tout y est pour enrichir ses connaissances culturelles</p>
                 
-                <p class="mt-15"><span>L’Ecole d’Optique & Lunetterie de Lille</span> est située au 78 Rue de la Chaude Rivière, dans le bâtiment très récent d’EKLA Business, à moins de 10 minutes à pied de la gare Lille Flandres et Lille Europe</p>
+                <p class="mt-15"><span>L’Ecole d’Optique & Lunetterie de Lille</span> est située au 78 Rue de la Chaude Rivière, dans le bâtiment très récent d’EKLA Business, à moins de 10 minutes à pied des gares Lille Flandres et Lille Europe</p>
                 <p>L’EOL profite d’un espace de 700 m² comportant 4 salles de classe lumineuses et spacieuses, un atelier de montage, un magasin pédagogique ainsi qu’un atelier de réfraction et de contactologie.</p>
                 <p>Nos étudiants peuvent profiter d’un espace détente avec tables basses et canapés, d’un confortable espace de restauration avec des micro-ondes et réfrigérateurs.
                     <br>Ils ont également accès au hall d’entrée EKLA qui propose des espaces cocooning de travail et d’échanges.

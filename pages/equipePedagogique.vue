@@ -8,7 +8,7 @@
 
         <v-row class="insertColorSecondary">
             <v-col cols="12" class="pa-6">
-                <p>L'équipe pédagogique de l'Ecole d'Optique & Lunetterie de Lille est constituée de 19 intervenants qualifiés, reconnus et expérimentés.</p>
+                <p>L'équipe pédagogique de l'Ecole d'Optique & Lunetterie de Lille est constituée de {{ equipePedagogique.length }} intervenants qualifiés, reconnus et expérimentés.</p>
                 <br>
                 <p>Ils connaissent parfaitement les techniques de réussite des examens et proposent aux étudiants un enseignement pragmatique, précis et exigeant</p>
                 <p>Leur pédagogie est personnalisée pour résoudre les difficultés de chaque étudiant afin qu'ils puissent bénéficier des méthodes, des connaissances et des astuces indispensables à leur réussite.</p>

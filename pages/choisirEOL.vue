@@ -96,7 +96,7 @@ export default {
             images2: [
                 {
                     source: metier_optique,
-                    texte: "Le metier de l'optique n'a plus de secret pour nous"
+                    texte: "Le métier de l'optique n'a plus de secret pour nous"
                 },
                 {
                     source: reconversion_professionnelle,

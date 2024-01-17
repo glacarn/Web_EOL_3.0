@@ -25,9 +25,9 @@
                     </v-col>
                 </v-row>
             </template>
-            <v-card>
+            <v-card id="cardDialogVisiteVirtuelle">
                 <iframe src="https://my.matterport.com/show/?m=sHgS6bYrbvc&help=1" id="iframeVisiteVirtuelle"></iframe>
-                <v-btn color="white" @click="dialogVisiteVirtuelle = false">Fermer</v-btn>
+                <button class="btn-primary" @click="dialogVisiteVirtuelle = false">Fermer</button>
             </v-card>
         </v-dialog>
         
@@ -201,19 +201,44 @@ export default {
 </script>
 
 
-<style>
+<style lang="scss">
 .v-carousel-item .v-responsive__content{
     display: flex;
+}
+
+.btn-primary{
+    background-color: $color-secondary;
+    color: $color-primary;
+    font-size: 1.2em;
+    height: 40px;
+    border-radius: 5px;
+}
+.btn-primary:hover{
+    background-color: $color-primary;
+    color: $color-secondary;
 }
 </style>
 
 
 
 <style lang="scss" scoped>
+iframe{
+    border: none;
+}
+
 #dialogVisiteVirtuelle {
   width: 80vw;
   height: 80vh;
 }
+
+#cardDialogVisiteVirtuelle{
+    padding: 5px;
+}
+
+.btn-primary {
+    margin-top: 5px;
+}
+
 .visiteVirtuelle{
     background-color: $color-insert-secondary;
     color: white;
@@ -238,11 +263,8 @@ export default {
 #iframeVisiteVirtuelle{
     height: 70vh;
     width: 100%;
-    padding-left: 2px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    border-radius: 5px;
 }
-
 
 .agenda{
     background-color: $color-insert-primary;

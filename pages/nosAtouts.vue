@@ -9,8 +9,7 @@
         <v-row id="atouts">
             <v-col cols="12"  md="8" id="insert">
                 <ul>
-                    <li>LA RÉUSSITE AU BTS DEPEND DE L’ÉQUIPE PÉDAGOGIQUE RECONNUE PAR LE JURY</li>
-                    <li class="mt-5">L’EOL CENTRE D’EXAMEN POUR LES ÉPREUVES PRATIQUES GRÂCE À UN MATÉRIEL DE POINTE</li>
+                    <li class="">L’EOL CENTRE D’EXAMEN POUR LES ÉPREUVES PRATIQUES GRÂCE À UN MATÉRIEL DE POINTE</li>
                     <li class="mt-5">INTERVENTIONS DE PROFESSIONNELS PRESTIGIEUX DANS LA FORMATION DES ÉTUDIANTS</li>
                     <li class="mt-5">UN SEUL PROJET, DES PROFILS DIFFÉRENTS, UNE SOLUTION ADAPTÉE POUR CHACUN EN FONCTION DE SES TALENTS</li>
                     <li class="mt-5">DES ÉVALUATIONS RÉGULIÈRES</li>
@@ -59,7 +58,7 @@ export default {
         height: 600px;
     }
     #insert{
-        height: 525px;
+        height: 450px;
         font-size: 1em;
     }
 }

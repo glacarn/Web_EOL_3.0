@@ -4,105 +4,108 @@
             <v-layout id="menu-mobile">
                 <v-app-bar collapse>
                     <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
-                    <v-toolbar-title>Coding Beauty</v-toolbar-title>
+                    <v-toolbar-title></v-toolbar-title>
                 </v-app-bar>
                 <v-navigation-drawer v-model="drawer" temporary>
                     <v-list>
-                        <v-list-item-group v-model="group">
-                            <v-list>
-                                <v-list-item class="app-bar-item app-bar-item-top pl-6">
-                                    <NuxtLink to="/" class="menuBtn">Accueil</NuxtLink>
-                                </v-list-item>
+                        <v-list-item class="app-bar-item app-bar-item-top pl-6">
+                            <NuxtLink to="/" class="menuBtn">Accueil</NuxtLink>
+                        </v-list-item>
 
-                                <v-expansion-panels variant="accordion">
-                                    <v-expansion-panel>
-                                        <v-expansion-panel-title>A propos</v-expansion-panel-title> 
-                                        <v-expansion-panel-text>
-                                            <div>
-                                                <NuxtLink to="/notreHistoire" class="menuBtn">Notre histoire</NuxtLink>
-                                            </div>
-                                            <div>
-                                                <NuxtLink to="/choisirEOL" class="menuBtn">Choisir l'EOL</NuxtLink>
-                                            </div>    
-                                            <div>
-                                                <NuxtLink to="/nosAtouts" class="menuBtn">Nos atouts</NuxtLink>
-                                            </div>
-                                        </v-expansion-panel-text>
-                                    </v-expansion-panel>
+                        <v-expansion-panels variant="accordion">
+                            <v-expansion-panel>
+                                <v-expansion-panel-title>A propos</v-expansion-panel-title> 
+                                <v-expansion-panel-text>
+                                    <div>
+                                        <NuxtLink to="/notreHistoire" class="menuBtn">Notre histoire</NuxtLink>
+                                    </div>
+                                    <div>
+                                        <NuxtLink to="/choisirEOL" class="menuBtn">Choisir l'EOL</NuxtLink>
+                                    </div>    
+                                    <div>
+                                        <NuxtLink to="/nosAtouts" class="menuBtn">Nos atouts</NuxtLink>
+                                    </div>
+                                </v-expansion-panel-text>
+                            </v-expansion-panel>
 
-                                    <v-expansion-panel>
-                                        <v-expansion-panel-title>
-                                            <NuxtLink to="/nosFormations">Nos formations</NuxtLink>
-                                        </v-expansion-panel-title> 
-                                        <v-expansion-panel-text>
-                                            <div>
-                                                <NuxtLink to="/prepa" class="menuBtn">Prépa</NuxtLink>
-                                            </div>
-                                            <div>
-                                                <NuxtLink to="/bts_OL_initial" class="menuBtn">BTS OL - initial</NuxtLink>
-                                            </div>    
-                                            <div>
-                                                <NuxtLink to="/bts_OL_alternance" class="menuBtn">BTS OL - alternance</NuxtLink>
-                                            </div>
-                                            <div>
-                                                <NuxtLink to="/licence" class="menuBtn">Licence</NuxtLink>
-                                            </div>
-                                        </v-expansion-panel-text>
-                                    </v-expansion-panel>
+                            <v-expansion-panel>
+                                <v-expansion-panel-title>
+                                    <NuxtLink to="/nosFormations">Nos formations</NuxtLink>
+                                </v-expansion-panel-title> 
+                                <v-expansion-panel-text>
+                                    <div>
+                                        <NuxtLink to="/prepa" class="menuBtn">Prépa - alternance</NuxtLink>
+                                    </div>
+                                    <div>
+                                        <NuxtLink to="/bts_OL_initial" class="menuBtn">BTS OL - initial</NuxtLink>
+                                    </div>    
+                                    <div>
+                                        <NuxtLink to="/bts_OL_alternance" class="menuBtn">BTS OL - alternance</NuxtLink>
+                                    </div>
+                                    <div>
+                                        <NuxtLink to="/licence" class="menuBtn">Licence</NuxtLink>
+                                    </div>
+                                </v-expansion-panel-text>
+                            </v-expansion-panel>
 
-                                    <v-expansion-panel>
-                                        <v-expansion-panel-title>Vie de campus</v-expansion-panel-title> 
-                                        <v-expansion-panel-text>
-                                            <div>
-                                                <NuxtLink to="/photos" class="menuBtn">Photos</NuxtLink>
-                                            </div>
-                                            <div>
-                                                <NuxtLink to="/lille" class="menuBtn">Lille</NuxtLink>
-                                            </div>    
-                                            <div>
-                                                <NuxtLink to="/handicap" class="menuBtn">Handicap</NuxtLink>
-                                            </div>
-                                            <div>
-                                                <NuxtLink to="http://hyperplanning.ecole-optique-lille.com/eol/" target="blank" class="menuBtn" @click="tab=4">Hyperplanning</NuxtLink>
-                                            </div>
-                                        </v-expansion-panel-text>
-                                    </v-expansion-panel>
+                            <v-expansion-panel>
+                                <v-expansion-panel-title>Vie de campus</v-expansion-panel-title> 
+                                <v-expansion-panel-text>
+                                    <div>
+                                        <NuxtLink to="/photos" class="menuBtn">Photos</NuxtLink>
+                                    </div>
+                                    <div>
+                                        <NuxtLink to="/lille" class="menuBtn">Lille</NuxtLink>
+                                    </div>    
+                                    <div>
+                                        <NuxtLink to="/handicap" class="menuBtn">Handicap</NuxtLink>
+                                    </div>
+                                    <div>
+                                        <NuxtLink to="http://hyperplanning.ecole-optique-lille.com/eol/" target="blank" class="menuBtn" @click="tab=4">Hyperplanning</NuxtLink>
+                                    </div>
+                                </v-expansion-panel-text>
+                            </v-expansion-panel>
 
-                                    <v-expansion-panel>
-                                        <v-expansion-panel-title>Equipe EOL</v-expansion-panel-title> 
-                                        <v-expansion-panel-text>
-                                            <div>
-                                                <NuxtLink to="/equipeAdministrative" class="menuBtn">Equipe administrative</NuxtLink>
-                                            </div>
-                                            <div>
-                                                <NuxtLink to="/equipePedagogique" class="menuBtn">Equipe pédagogique</NuxtLink>
-                                            </div>    
-                                        </v-expansion-panel-text>
-                                    </v-expansion-panel>
-                                </v-expansion-panels>
+                            <v-expansion-panel>
+                                <v-expansion-panel-title>Equipe EOL</v-expansion-panel-title> 
+                                <v-expansion-panel-text>
+                                    <div>
+                                        <NuxtLink to="/equipeAdministrative" class="menuBtn">Equipe administrative</NuxtLink>
+                                    </div>
+                                    <div>
+                                        <NuxtLink to="/equipePedagogique" class="menuBtn">Equipe pédagogique</NuxtLink>
+                                    </div>    
+                                </v-expansion-panel-text>
+                            </v-expansion-panel>
+                        </v-expansion-panels>
 
-                                
-                                <v-list-item class="app-bar-item  pl-6">
-                                    <NuxtLink to="/preinscription" class="menuBtn">Préinscription</NuxtLink>
-                                </v-list-item>
+                        
+                        <v-list-item class="app-bar-item  pl-6">
+                            <NuxtLink to="/preinscription" class="menuBtn">Préinscription</NuxtLink>
+                        </v-list-item>
 
-                                <v-list-item class="app-bar-item app-bar-item-bottom  pl-6">
-                                    <NuxtLink to="/contact" class="menuBtn">Contact</NuxtLink>
-                                </v-list-item>
-                            </v-list>
-                        </v-list-item-group>
+                        <v-list-item class="app-bar-item app-bar-item-bottom  pl-6">
+                            <NuxtLink to="/contact" class="menuBtn">Contact</NuxtLink>
+                        </v-list-item>
                     </v-list>
                 </v-navigation-drawer>
             </v-layout>
 
             <v-row align="center" justify="center" class="page">
                 
-                <v-col cols="12" md="4" offset-md="4">
-                    <img src="../assets/images/logos/logo.png" class="logo" alt="Ecole d'optique et de lunetterie de Lille"/>
+                <v-col cols="12">
+                    <NuxtLink to="/" @click="tab=1" class="menuBtn">
+                        <img src="../assets/images/logos/logo.png" class="logo" alt="Ecole d'optique et de lunetterie de Lille"/>
+                    </NuxtLink>
                 </v-col>
-                <v-col cols="8" sm="4" md="2" offset-sm="0" offset-md="2">
-                    <magma-widget identifier="b2af4a0a-249a-4f63-b830-15033491555c" name-fr="Discute avec un étudiant de l'EOL" class="magma"></magma-widget>
-                </v-col>
+                <!-- Widget Magma : contrat rompu mais idée à garder pour le developper en interne
+                    <v-col cols="12" md="4" offset-md="4">
+                        <img src="../assets/images/logos/logo.png" class="logo" alt="Ecole d'optique et de lunetterie de Lille"/>
+                    </v-col>
+                    <v-col cols="8" sm="4" md="2" offset-sm="0" offset-md="2">
+                        <magma-widget identifier="b2af4a0a-249a-4f63-b830-15033491555c" name-fr="Discute avec un étudiant de l'EOL" class="magma"></magma-widget>
+                    </v-col>
+                -->
             </v-row>
 
             <v-row id="menu-ordinateur">
@@ -144,7 +147,7 @@
                                 <v-list>
                                     <v-list-item>
                                         <v-list-item-title class="mt-2">
-                                            <NuxtLink to="/prepa" class="menuBtn" @click="tab=3">Prépa</NuxtLink>
+                                            <NuxtLink to="/prepa" class="menuBtn" @click="tab=3">Prépa - alternance</NuxtLink>
                                         </v-list-item-title>
                                         <v-list-item-title class="mt-3">
                                             <NuxtLink to="/bts_OL_initial" class="menuBtn" @click="tab=3">BTS OL - initial</NuxtLink>
@@ -224,7 +227,7 @@
         <div id="footer" class="mt-5 pt-3 text-center page">
             <v-row no-gutters>
                 <v-col>
-                    <p class="pt-3 pb-3">Suivez nos actualités en temps et en heure en vous abonnant à nos réseaux sociaux</p>
+                    <p class="pt-3 pb-3">Suivez notre actualité en vous abonnant à nos réseaux sociaux</p>
                 </v-col>
             </v-row>
             <v-row no-gutters justify="center" class="mt-2">
@@ -313,12 +316,12 @@ export default {
     display: flex;
     margin: auto;
 }
-
+/*
 .magma{
     margin-top: 60px;
     width: 200px;
 }
-
+*/
 #menu-mobile{
     visibility: hidden;
 }
@@ -364,9 +367,11 @@ export default {
 }
 
 @media (max-width: 1279px) {
+    /*
     .magma{
         width: 100px;
     }
+    */
     .menuBtn{
         font-size: 0.7em;
         padding: 0px;
@@ -385,10 +390,12 @@ export default {
         width: 125px;
     }
 
+    /*
     .magma{
         margin-top: 40px;
         width: 100px;
     }
+    */
     .logoReseaux{
         width: 60px;
     }

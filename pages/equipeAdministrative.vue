@@ -60,7 +60,7 @@ export default {
                     photo: Arnaud_VANROBAEYS,
                     nom: "Arnaud VAN ROBAEYS",
                     poste: "Directeur de l'Ecole d'Optique de Lille et référent handicap",
-                    description1: "Diplomé en 1995 du BTS opticien-lunetier et professeur depuis plus de 20 ans, je suis fier d'avoir repris cette école emblématique depuis la rentrée 2019.",
+                    description1: "Diplomé en 1993 du BTS opticien-lunetier et professeur depuis plus de 20 ans, je suis fier d'avoir repris cette école emblématique depuis la rentrée 2019.",
                     description2: "Je m'entoure d'une équipe dynamique et expérimentée pour faire perdurer nos valeurs telles que le savoir faire et l'excellence."
                 },
                 {

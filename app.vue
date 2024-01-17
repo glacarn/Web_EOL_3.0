@@ -9,7 +9,7 @@
                         <h2 class="h2TitreParties">AGENDA</h2>
                     </v-col>
                     <v-col cols="1">
-                        <btn @click="dialogEvenements = false" style="cursor: pointer;"><v-icon icon="mdi-close-thick"></v-icon></btn>
+                        <button @click="dialogEvenements = false" style="cursor: pointer;"><v-icon icon="mdi-close-thick"></v-icon></button>
                     </v-col>
                 </v-row>
                 <Evenements @noEvent="noEvent"/>
@@ -24,13 +24,19 @@
 
 <script setup lang="ts">
   useHead({
-    title: "EOL - Ecole d'Optique de Lille",
+    title: "EOL - Ecole d'Optique et de Lunetterie de Lille",
+    meta: [{
+      name: "Ecole d'Optique et de Lunetterie de Lille - EOL",
+      content:"L'EOL vous propose des formations de BTS Opticien lunetier en initial et en alternance. Nous proposons également une prépa et une licence en partenariat avec une université.",
+    }],
+    /*
     script: [
       {
         src: 'https://cdn.jsdelivr.net/gh/magma-app/magma-widget/src/widget.min.js',
         tagPosition: 'head'
       }
     ],
+    */
     link: [
     {
         rel: 'stylesheet',
@@ -181,5 +187,10 @@ video{
 }
 .h2TitreParties{
     font-size: 2.8em;
+}
+@media (max-width: 600px) {
+  .h2TitreParties {
+    font-size: 1.8em;
+  }
 }
 </style>

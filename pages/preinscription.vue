@@ -8,19 +8,17 @@
         </v-row>
 
         <v-row justify="center">
-            <v-col cols="12" sm="10" md="6">
-                <form id="contact-form" enctype="multipart/form-data" method="POST" action="/demande_preinscription.php" role="form"> <!-- method="POST" action="/demande_preinscription.php" -->
-                    <v-text-field v-model="nom" :rules="regleRequis" label="Nom *" required></v-text-field>
-                    <v-text-field v-model="prenom" :rules="regleRequis" label="Prénom *" required class="mt-1"></v-text-field>
-                    <v-select v-model="formationEnvisagee" :items="formationPossible" :rules="regleRequis" label="Formation envisagée *" required class="mt-1"></v-select>
-                    <v-select v-model="priseContact" :items="aContacter" :rules="regleRequis" label="Souhaites-tu prendre un rendez-vous avec nous ? *" required class="mt-1"></v-select>
-                    <v-text-field v-model="email" :rules="regleEmail" label="Email *" required class="mt-1"></v-text-field>
-                    <v-text-field v-model="tel" :rules="regleTel" label="Téléphone *" required class="mt-1"></v-text-field>
-                    <v-textarea v-model="commentaires" label="Commentaires" class="mt-1"></v-textarea>
-                    <v-checkbox color="#7B519C" v-model="jpo" label="Je souhaite m'inscrire à la prochaine journée porte ouverte" type="checkbox" hide-details></v-checkbox>
-                    <v-checkbox color="#7B519C" v-model="rgpdValid" :rules="regleRequis" label="J'autorise l'Ecole d'Optique de Lille à conserver mes données personnelles. Celles-ci seront uniquement destinées à des communications personnelles. *" type="checkbox"></v-checkbox>
-                    <v-btn class="mt-5 btn_send" @click="envoyer" type="submit">Envoyer</v-btn>
-                </form>
+            <v-col id="formulaire" cols="12" sm="10" md="6">
+                <v-text-field v-model="nom" :rules="regleRequis" label="Nom *" required></v-text-field>
+                <v-text-field v-model="prenom" :rules="regleRequis" label="Prénom *" required class="mt-1"></v-text-field>
+                <v-select v-model="formationEnvisagee" :items="formationPossible" :rules="regleRequis" label="Formation envisagée *" required class="mt-1"></v-select>
+                <v-select v-model="priseContact" :items="aContacter" :rules="regleRequis" label="Souhaites-tu prendre un rendez-vous avec nous ? *" required class="mt-1"></v-select>
+                <v-text-field v-model="email" :rules="regleEmail" label="Email *" required class="mt-1"></v-text-field>
+                <v-text-field v-model="tel" :rules="regleTel" label="Téléphone *" required class="mt-1"></v-text-field>
+                <v-textarea v-model="commentaires" label="Commentaires" class="mt-1"></v-textarea>
+                <v-checkbox color="#7B519C" v-model="jpo" label="Je souhaite m'inscrire à la prochaine journée porte ouverte" type="checkbox" hide-details></v-checkbox>
+                <v-checkbox color="#7B519C" v-model="rgpdValid" :rules="regleRequis" label="J'autorise l'Ecole d'Optique de Lille à conserver mes données personnelles. Celles-ci seront uniquement destinées à des communications personnelles. *" type="checkbox"></v-checkbox>
+                <button class="mt-5 btn_send btn-primary" @click="envoyer" >Envoyer</button>
             </v-col>
         </v-row>
     </div>
@@ -85,20 +83,34 @@ export default {
         }
     },
     methods:{
-        envoyer () {
-            // vérifier ROUTE !!
+        async envoyer () {
             if (this.rgpdValid) {
-                axios.post('/demande_preinscription', {
-                    name: this.nom,
-                    surname: this.prenom,
-                    need: this.formationEnvisagee,
+                axios.post('https://backend-eol.onrender.com/preinscription', { //http://localhost:3000/preinscription
+                    nom: this.nom,
+                    prenom: this.prenom,
+                    formation: this.formationEnvisagee,
                     rappel: this.priseContact,
                     email: this.email,
-                    phone: this.tel,
+                    tel: this.tel,
                     commentaire: this.commentaires,
                     jpo: this.jpo,
-                    // https://www.ecole-optique-lille.com/confirmation.html
-                });
+                })
+                .then(reponse => {
+                    this.nom = "";
+                    this.prenom = "";
+                    this.formationEnvisagee = null;
+                    this.priseContact = null;
+                    this.email = "";
+                    this.tel = "";
+                    this.commentaires = "";
+                    this.jpo = false;
+                    this.rgpdValid = false;
+                    navigateTo('\confirmationDossier')
+                })
+                .catch(error => {
+                    console.log(error)
+                    alert(error.response.data.message)
+                })
             }
             else{
                 alert("Vous devez accepter que vos données soient conservées afin que l'on puisse vous faire parvenir le dossier de pré-inscription.")
@@ -121,7 +133,7 @@ export default {
 
 
 <style lang="scss" scoped>
-form{
+#formulaire{
     display: flex;
     flex-direction: column;
 }

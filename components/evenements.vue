@@ -8,14 +8,14 @@
         </v-row>
 
         <v-row v-for="evenement in evenements" style="font-size: 1.4em;" class="mb-5">
-            <v-col lg="3" sm="4" cols="12" style="background-color: white; height: 180px;">
+            <v-col lg="3" sm="4" cols="12" class="dateBox">
                 <p class="text-center" style="text-decoration: underline; font-size: 1.4em;">{{ evenement.jour }}</p>
                 <h3 class="text-center" style="font-size: 2em;">{{ evenement.date }}</h3>
                 <h3 class="text-center">{{ evenement.mois }}</h3>
             </v-col>
-            <v-col lg="9" sm="8" cols="12">
-                <h3 class="mt-2">{{ evenement.type }}</h3>
-                <p class="mt-5">{{ evenement.Description1 }}</p>
+            <v-col lg="9" sm="8" cols="12" class="infosBox">
+                <h3>{{ evenement.type }}</h3>
+                <p>{{ evenement.Description1 }}</p>
                 <p style="margin-top: -8px;">{{ evenement.Description2 }}</p>
             </v-col>
         </v-row>
@@ -99,6 +99,16 @@ h3{
     height: 400px;
 }
 
+.dateBox{
+    background-color: white;
+    height: 180px;
+}
+
+.infosBox h3{
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
 #pasEvenement{
     font-size: 1.4em;
     display: flex;
@@ -129,6 +139,17 @@ h3{
     #boxEvenements{
         height: auto;
         min-height: 200px;
+    }
+    .dateBox{
+        height: 140px;
+        font-size: 0.8em;
+    }
+    .infosBox{
+        font-size: 0.9em;
+    }
+    .infosBox h3{
+        margin-top: 0px;
+        margin-bottom: 5px;
     }
     #pasEvenement{
         padding-top: 10%;

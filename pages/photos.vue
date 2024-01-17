@@ -16,7 +16,7 @@
                     </v-carousel>
                 </v-card-text>
                 <v-card-actions>
-                    <v-btn block @click="dialog = false">Fermer</v-btn>
+                    <button class="btn-primary btn-actionCard" @click="dialog = false">Fermer</button>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -136,7 +136,7 @@ export default {
                 },
                 {
                     photo : evenementTheme1,
-                    type: "Evenement à thèmes",
+                    type: "Evénement à thèmes",
                     precision: "",
                     multiPhotos: false
                 },
@@ -178,6 +178,13 @@ img{
     position: relative;
     top: 70px;
     left: 82%;
+}
+
+.btn-actionCard{
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 5px;
 }
 
 @media (max-width: 960px) {

@@ -3,12 +3,16 @@
 // const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
+  
+  ssr: true,
+  
+  //target: 'static',
   /*
-  ssr: false,
   nitro: {
     preset: 'service-worker'
   },
   */
+
   app: {
     head: {
       charset: 'utf-8',

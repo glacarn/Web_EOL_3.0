@@ -32,7 +32,7 @@
             <v-col cols="12" md="6" offset-md="1" class="encart pa-10">
                 <h2>Ces dispositions peuvent concerner :</h2>
                 <ul class="mt-5 text-left">
-                    <li>Les contrôlés et les examens (temps supplémentaire, secrétaire, ordinateur, salle dédiée...).</li>
+                    <li>Les contrôles et les examens (temps supplémentaire, secrétaire, ordinateur, salle dédiée...).</li>
                     <li>L’accès aux locaux, installation de matériels.</li>
                     <li>L’utilisation de matériels appropriés (ordinateur et logiciel adaptés).</li>
                     <li>Prise de note en cours magistraux et en travaux diriger, éventuellement dactylographiés.</li>
