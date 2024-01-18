@@ -43,6 +43,10 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
 
+  modules: [
+    '@nuxtjs/device',
+   ],
+
   runtimeConfig: {
     public: {
       TAUX_REUSSITE_PREPA: process.env.NUXT_TAUX_REUSSITE_PREPA,

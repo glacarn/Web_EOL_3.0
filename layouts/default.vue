@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <div id="En-tête">
-            <v-layout id="menu-mobile">
+            <v-layout v-if="$device.isMobileOrTablet" id="menu-mobile">
                 <v-app-bar collapse>
                     <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
                     <v-toolbar-title></v-toolbar-title>
@@ -108,7 +108,7 @@
                 -->
             </v-row>
 
-            <v-row id="menu-ordinateur">
+            <v-row v-if="$device.isDesktop" id="menu-ordinateur">
                 <v-col cols="12" class="mt-5">
                     <v-tabs v-model="tab" color="#7B519C" align-tabs="center">
                         <v-tab :value="1"><NuxtLink to="/" class="menuBtn">Accueil</NuxtLink></v-tab>
@@ -322,12 +322,6 @@ export default {
     width: 200px;
 }
 */
-#menu-mobile{
-    visibility: hidden;
-}
-#menu-ordinateur{
-    visibility: visible;
-}
 
 .menuBtn{
     font-size: 1em;
@@ -379,13 +373,6 @@ export default {
 }
 
 @media (max-width: 960px) {
-    #menu-mobile{
-        visibility: visible;
-    }
-    #menu-ordinateur{
-        visibility: hidden;
-        height: 0px;
-    }
     .logo{
         width: 125px;
     }

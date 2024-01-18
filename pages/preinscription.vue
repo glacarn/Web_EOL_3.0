@@ -91,7 +91,7 @@ export default {
         async envoyer () {
             if (this.rgpdValid) {
                 this.progressChargement = true;
-                axios.post('https://backend-eol.onrender.com/preinscription', { //http://localhost:3000/preinscription
+                axios.post('https://backend-eol.cyclic.app/preinscription', { //http://localhost:3000/preinscription
                     nom: this.nom,
                     prenom: this.prenom,
                     formation: this.formationEnvisagee,
@@ -116,6 +116,7 @@ export default {
                 })
                 .catch(error => {
                     console.log(error)
+                    this.progressChargement = false;
                     alert(error.response.data.message)
                 })
             }
