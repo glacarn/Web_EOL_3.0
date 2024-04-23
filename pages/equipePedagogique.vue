@@ -49,13 +49,14 @@ import Philippe_VANDENBROUCKE from '../assets/images/equipe_pedagogique/Philippe
 
 import Julien_ETOGO from '../assets/images/equipe_pedagogique/Julien_ETOGO.png'
 import Faustine_WATTELLE from '../assets/images/equipe_pedagogique/Faustine_WATTELLE.png'
-import Helene_CHUFFART from '../assets/images/equipe_pedagogique/Helene_CHUFFFART.png'
+import Helene_CHUFFART from '../assets/images/equipe_pedagogique/Helene_CHUFFART.png'
 
 export default {
     name: 'EquipePedagogique',
     data() {
         return {
             equipePedagogique: [
+                // Dans l'ordre alphabétique du nom de famille
                 {
                     photo: Delphine_BEERT,
                     nom: "Delphine BEERT",
